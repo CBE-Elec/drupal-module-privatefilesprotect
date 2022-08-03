@@ -1,0 +1,6 @@
+name: 'Private Files Protect'
+type: module
+description: 'Avoid any access to private:// if not allowed'
+core_version_requirement: ^9
+package: 'Aquarius'
+version: "0.0.1"

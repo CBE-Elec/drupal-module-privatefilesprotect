@@ -1,0 +1,13 @@
+{
+    "name": "aquarius/privatefilesprotect",
+    "description": "Avoid any access to private:// if not allowed",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Cyril Béguet",
+            "email": "webmaster.beguet@free.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

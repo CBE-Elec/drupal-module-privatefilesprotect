@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Contains privatefilesprotect.module.
+ */
+
+use Drupal\Core\StreamWrapper\StreamWrapperManager;
+
+/**
+ * Implements hook_file_download().
+ */
+function privatefilesprotect_file_download($uri) {
+	# Check if the file is coming from the private stream wrapper
+  	if (StreamWrapperManager::getScheme($uri) == 'private') {
+		
+		# 1: Block anonymous users.
+		if (Drupal::currentUser()->isAnonymous()) {
+      		return -1;
+    	}
+    	
+    	# 2: The user does not have the permission "access private files".
+    	if (!\Drupal::currentUser()->hasPermission('access private files')) {
+      		return -1;
+    	}
+  	}
+  	  	
+   	return NULL;
+}
